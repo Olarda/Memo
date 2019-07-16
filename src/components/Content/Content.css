@@ -1,0 +1,14 @@
+.Content {
+  display: flex;
+  justify-content: center;
+  background-color: #b9ece8;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.Content-CardWrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 160px);
+  grid-gap: 15px;
+}
+
+/*# sourceMappingURL=Content.css.map */

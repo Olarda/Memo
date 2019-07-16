@@ -1,0 +1,32 @@
+.DisableCard {
+  position: relative;
+  color: #FFF;
+  text-align: center;
+  line-height: 160px;
+  width: 160px;
+  height: 160px;
+  transition: all 0.6s ease;
+  transform-style: preserve-3d;
+  border-radius: 15%;
+}
+.DisableCard-Front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 160px;
+  height: 160px;
+  backface-visibility: hidden;
+  font-family: "Roboto", sans-serif;
+  border-radius: 15%;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #9ad1cb;
+}
+.DisableCard-BackImage {
+  border-radius: 15%;
+  border: 1px solid #ffc1a8;
+}
+
+/*# sourceMappingURL=DisableCard.css.map */

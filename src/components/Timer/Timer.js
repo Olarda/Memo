@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import Button from '../components/Button/Button';
+import Button from '../Button/Button';
 import { cn } from '@bem-react/classname';
+import {connect} from "react-redux";
+import setGameStateAction from "../../actions/gameState";
+import setEndAction from "../../actions/actionEnd";
 
 const timer = cn('Timer');
 
@@ -10,18 +13,21 @@ class Timer extends Component {
         super(props);
         this.state = {
             time: {},
-            seconds: 80
+            seconds: this.props.timer,
+            run: false
         };
 
         this.timer = null;
         this.startTimer = this.startTimer.bind(this);
-        this.stopTimer = this.stopTimer.bind(this);
+        this.playPause = this.playPause.bind(this);
         this.count = this.count.bind(this);
     }
 
     componentDidMount() {
         let timeLeft = this.conversion(this.state.seconds);
         this.setState({time: timeLeft});
+        this.startTimer();
+        this.props.setGameState(true);
     }
 
     conversion(time) {
@@ -47,8 +53,18 @@ class Timer extends Component {
         }
     }
 
-    stopTimer() {
-        clearInterval(this.timer);
+    playPause() {
+        this.setState({
+            run: !this.state.run
+        });
+
+        if(!this.state.run) {
+           clearInterval(this.timer);
+        } else {
+            this.startTimer();
+        }
+
+        this.props.setGameState(this.state.run);
     }
 
     count() {
@@ -60,7 +76,10 @@ class Timer extends Component {
 
         if (seconds === 0) {
             clearInterval(this.timer);
+            this.props.setGameState(false);
+            this.props.setGameEnd('timer')
         }
+
     }
 
     getCorrectTime(time){
@@ -71,8 +90,7 @@ class Timer extends Component {
 
         return (
             <div className={timer()}>
-            <Button name='Start' handleClick={this.startTimer}/>
-            <Button name='Stop' handleClick={this.stopTimer}/>
+            <Button name={this.state.run ? 'Start': 'Pause'} handleClick={this.playPause}/>
             <div>Осталось {this.getCorrectTime(this.state.time.m)}: {this.getCorrectTime(this.state.time.s)}</div>
         </div>
 
@@ -80,5 +98,22 @@ class Timer extends Component {
     }
 
 }
+function mapStateToProps(state) {
+    return {
+        timer: state.timer.timer
+    }
+}
+function mapDispatchToProps(dispatch) {
+    return {
+        setGameState: (state) => {
+            dispatch(setGameStateAction(state))
+        },
+        setGameEnd: (state) => {
+            dispatch(setEndAction(state))
+        },
 
-export default Timer;
+    }
+}
+
+// export default Timer;
+export default connect(mapStateToProps, mapDispatchToProps)(Timer);
