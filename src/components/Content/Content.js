@@ -38,7 +38,7 @@ class Content extends Component {
     getEqual() {
 
         if (!this.props.equal && this.props.clickCardArr && this.props.clickCardArr.length === 2) {
-            console.log('no')
+
             setTimeout(() => {
                 this.setState({
                     flip: false
@@ -49,18 +49,17 @@ class Content extends Component {
         }
 
         if (this.props.equal && this.props.clickCardArr && this.props.clickCardArr.length === 2) {
-            // console.log('equal')
+
             this.props.clickCardArr.forEach(item => {
-                // console.log(item, 'item')
+
                 this.props.setCheckedCard(item);
-            })
+            });
             this.props.setCleanCards();
 
             if(this.props.checkedCard && this.props.checkedCard.length === 16) {
 
                 this.props.setGameEnd('succes');
             }
-            // console.log(this.props.checkedCard, 'checkedArr')
         }
 
     }

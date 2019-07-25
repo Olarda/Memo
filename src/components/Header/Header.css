@@ -1,5 +1,7 @@
 .Header {
-  height: 70px;
+  display: flex;
+  background-color: #f3d6c9;
+  border-bottom: 3px solid #69abaa;
 }
 
 /*# sourceMappingURL=Header.css.map */

@@ -9,6 +9,9 @@
   border-radius: 10px;
   transform: translate(-50%, -50%);
   background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .StartModal-Bg {

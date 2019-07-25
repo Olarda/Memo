@@ -1,0 +1,38 @@
+.Button {
+  //width: 140px;
+  border-radius: 20px;
+  font-family: 'Merriweather', serif;
+  //font-family: 'Cookie', cursive;
+  //font-family: 'Bad Script', cursive;
+  font-size: 22px;
+  padding: 13px 30px;
+  line-height: 20px;
+  outline: none;
+
+  &_start {
+    background-color: #b9ece8;
+    color: #000;
+  }
+
+  &-Сontrol {
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-Сontrol_pause {
+    background-color: transparent;
+    border: 2px solid #69abaa;
+
+  }
+  &-Сontrol_start {
+    background-color: transparent;
+    border: 2px solid #d9977b;
+  }
+
+}
+

@@ -18,7 +18,7 @@ class StartModal extends Component {
         e.preventDefault();
 
         if (this.props.onClose) {
-            console.log('close')
+
             this.props.onClose();
             this.props.setStartGame();
         }
@@ -29,12 +29,12 @@ class StartModal extends Component {
         if(!this.props.isOpen) {
             return ''
         }
-    console.log(this.props.type, 'this.props.type')
+
         if(this.props.type === 'timer') {
             return (
                 <>
                     <div className={startModal()} type={this.props.type}>
-                        <Button  handleClick={this.close} name="Время истекло"/>
+                        <Button  handleClick={this.close} name="Game Over!"/>
                     </div>
                     <div className={startModal('Bg')}> </div>
                 </>
@@ -43,7 +43,7 @@ class StartModal extends Component {
         return (
             <>
                 <div className={startModal()} type={this.props.type}>
-                    <Button  handleClick={this.close} name="Закрыть"/>
+                    <Button  type={this.props.type} handleClick={this.close} name="PLAY!"/>
                 </div>
                 <div className={startModal('Bg')}> </div>
             </>

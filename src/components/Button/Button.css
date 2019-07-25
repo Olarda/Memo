@@ -1,0 +1,32 @@
+@charset "UTF-8";
+.Button {
+  border-radius: 20px;
+  font-family: "Merriweather", serif;
+  font-size: 22px;
+  padding: 13px 30px;
+  line-height: 20px;
+  outline: none;
+}
+.Button_start {
+  background-color: #b9ece8;
+  color: #000;
+}
+.Button-Сontrol {
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Button-Сontrol_pause {
+  background-color: transparent;
+  border: 2px solid #69abaa;
+}
+.Button-Сontrol_start {
+  background-color: transparent;
+  border: 2px solid #d9977b;
+}
+
+/*# sourceMappingURL=Button.css.map */
