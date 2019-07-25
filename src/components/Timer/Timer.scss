@@ -1,0 +1,11 @@
+.Timer {
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+
+  &-Numbers {
+    padding: 10px 20px;
+    font-size: 60px;
+    color: #69abaa;
+  }
+}

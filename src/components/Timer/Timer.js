@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Button from '../Button/Button';
 import { cn } from '@bem-react/classname';
 import {connect} from "react-redux";
+import './Timer.scss';
 import setGameStateAction from "../../actions/gameState";
 import setEndAction from "../../actions/actionEnd";
 
@@ -26,8 +27,10 @@ class Timer extends Component {
     componentDidMount() {
         let timeLeft = this.conversion(this.state.seconds);
         this.setState({time: timeLeft});
-        this.startTimer();
+    }
+    componentWillReceiveProps() {
         this.props.setGameState(true);
+        this.startTimer();
     }
 
     conversion(time) {
@@ -90,8 +93,8 @@ class Timer extends Component {
 
         return (
             <div className={timer()}>
-            <Button name={this.state.run ? 'Start': 'Pause'} handleClick={this.playPause}/>
-            <div>Осталось {this.getCorrectTime(this.state.time.m)}: {this.getCorrectTime(this.state.time.s)}</div>
+            <Button name={this.state.run ? 'Start': 'Pause'} type={this.state.run ? 'start': 'pause'} handleClick={this.playPause}/>
+            <div className={timer('Numbers')}>{this.getCorrectTime(this.state.time.m)}:{this.getCorrectTime(this.state.time.s)}</div>
         </div>
 
     )
@@ -115,5 +118,4 @@ function mapDispatchToProps(dispatch) {
     }
 }
 
-// export default Timer;
 export default connect(mapStateToProps, mapDispatchToProps)(Timer);
