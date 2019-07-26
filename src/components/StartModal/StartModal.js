@@ -11,7 +11,8 @@ class StartModal extends Component {
 
     constructor(props) {
         super(props);
-        this.close = this.close.bind(this)
+        this.close = this.close.bind(this);
+        this.restart = this.restart.bind(this);
     }
 
     close(e) {
@@ -24,6 +25,10 @@ class StartModal extends Component {
         }
 
     }
+    restart(){
+        console.log('12')
+        window.location.reload();
+    }
 
     render() {
         if(!this.props.isOpen) {
@@ -34,11 +39,24 @@ class StartModal extends Component {
             return (
                 <>
                     <div className={startModal()} type={this.props.type}>
-                        <Button  handleClick={this.close} name="Game Over!"/>
+                        <div> Game Over!</div>
+                        <Button type={this.props.type} name="Restart" handleClick={this.restart}/>
                     </div>
                     <div className={startModal('Bg')}> </div>
                 </>
             )
+        }
+        else if(this.props.type === 'succes') {
+           return (
+               <>
+                   <div className={startModal()} type={this.props.type}>
+                       <div>You Win!</div>
+                       <Button type={this.props.type} name="Restart" handleClick={this.restart}/>
+                   </div>
+                   <div className={startModal('Bg')}> </div>
+               </>
+           )
+
         } else {
         return (
             <>
