@@ -39,10 +39,10 @@ class StartModal extends Component {
             return (
                 <>
                     <div className={startModal()} type={this.props.type}>
-                        <div> Game Over!</div>
+                        <div className={startModal('Title')}>Время истекло!</div>
                         <Button type={this.props.type} name="Restart" handleClick={this.restart}/>
                     </div>
-                    <div className={startModal('Bg')}> </div>
+                    <div className={startModal('Bg')}>  </div>
                 </>
             )
         }
@@ -50,7 +50,7 @@ class StartModal extends Component {
            return (
                <>
                    <div className={startModal()} type={this.props.type}>
-                       <div>You Win!</div>
+                       <div className={startModal('Title')}>Вы выиграли!</div>
                        <Button type={this.props.type} name="Restart" handleClick={this.restart}/>
                    </div>
                    <div className={startModal('Bg')}> </div>
@@ -63,7 +63,7 @@ class StartModal extends Component {
                 <div className={startModal()} type={this.props.type}>
                     <Button  type={this.props.type} handleClick={this.close} name="PLAY!"/>
                 </div>
-                <div className={startModal('Bg')}> </div>
+                <div className={startModal('Bg')}>  </div>
             </>
 
         )}

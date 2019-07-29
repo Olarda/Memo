@@ -6,10 +6,17 @@
   padding: 13px 30px;
   line-height: 20px;
   outline: none;
+  border: 1px solid #000;
 }
 .Button_start {
   background-color: #b9ece8;
   color: #000;
+}
+.Button_timer {
+  background-color: #ffc3ab;
+}
+.Button_succes {
+  background-color: #ffc3ab;
 }
 .Button-Сontrol {
   width: 50px;

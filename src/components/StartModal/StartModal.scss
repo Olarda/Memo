@@ -3,23 +3,31 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  min-width: 250px;
-  min-height: 100px;
+  min-width: 200px;
+  min-height: 200px;
   padding: 15px;
-  border-radius: 10px;
+  border-radius: 50%;
   transform: translate(-50%, -50%);
   background: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-}
-.StartModal-Bg {
-  z-index: 9998;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: lightgray;
+  border: 1px solid #000;
+
+  &-Title {
+    font-size: 20px;
+    font-family: 'Merriweather', serif;
+    padding: 23px 0;
+  }
+
+  &-Bg {
+    z-index: 9998;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #f3d6c9;
+  }
 }

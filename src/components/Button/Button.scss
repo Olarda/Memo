@@ -8,10 +8,19 @@
   padding: 13px 30px;
   line-height: 20px;
   outline: none;
+  border: 1px solid #000;
 
   &_start {
     background-color: #b9ece8;
     color: #000;
+  }
+
+  &_timer {
+    background-color: #ffc3ab;
+  }
+
+  &_succes {
+    background-color: #ffc3ab;
   }
 
   &-Сontrol {
@@ -35,4 +44,3 @@
   }
 
 }
-
